@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "eStudij Navigator",
+  "description": "Navigates you to the desired Estudij page => use !e query for navigation",
+  "version": "0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background_script.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_popup": "browserAction/index.html",
+    "default_title": "eStudij Navigator"
+  },
+  "omnibox": { "keyword" : "!e" }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" />
+        <link href="../matter-0.2.2.min.css" rel="stylesheet" />
+    </head>
+  <body class="matter-body1 body"> 
+    <h1 class="matter-h5">Estudij Navigator</h1>
+
+    <div style="display: flex;">
+        <div style="flex: 0.8;">
+            <label id="name-form" style="width: 100%;" class="matter-textfield-standard">
+                <input id="element-name" placeholder=" "/>
+                <span>Path Name</span>
+            </label>
+        </div>
+        <div style="flex: 0.01;"></div>
+        <div style="flex: 0.8;">
+            <label id="url-form" style="width: 100%;" class="matter-textfield-standard">
+                <input id="element-url" placeholder=" "/>
+                <span>URL</span>
+            </label>
+        </div>
+        <div style="flex: 0.01;"></div>
+        <div style="flex: 0.2;">
+            <button style="width: 100%; margin-top: 20px;" id="add-element" class="matter-button-contained">Add</button>
+        </div>
+    </div>
+    <br>
+
+    <div class="elements-table-container">
+        <table class="elements-table">
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
