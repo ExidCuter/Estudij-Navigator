@@ -9,16 +9,21 @@ class Element {
     }
     
     generateTableHTML() {
-        return `<tr>
-            <td>${this.name}</td>
-            <td>
+        let parser = new DOMParser();
+
+        let sElement =  `<div><div style="display: flex;">
+            <div style="flex: 0.9;">
+                <div><b>${this.name} =></b></div>
                 <a class="matter-link" href="${this.url}">${this.url}</a>
-            </td>
-            <td class="table-right">
-                <button name="${this.name}" class="remove-btn matter-button-contained matter-error">Remove</button>
-            </td>                
-        </tr>
+            </div>
+            <div style="flex: 0.1;">
+                <button style="height: 100%; width: 100%;" name="${this.name}" class="remove-btn matter-button-contained matter-error">Remove</button>
+            </div>      
+        </div>
+        <hr></div>
         `;
+
+        return parser.parseFromString(sElement, 'text/html').body.firstChild;
     }
 }
 
@@ -31,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
     JSON.parse(sElements ? sElements : "[]").forEach(oStorageElement => {
         let oElemnent = Element.getFromObject(oStorageElement);
 
-        aElementTable[0].innerHTML += oElemnent.generateTableHTML();
+        aElementTable[0].append(oElemnent.generateTableHTML());
 
         aElements.push(oElemnent);
     });
@@ -60,7 +65,7 @@ document.getElementById("add-element").addEventListener("click", oEvent => {
 
             window.localStorage.setItem("elements", JSON.stringify(aElements));
     
-            aElementTable[0].innerHTML += oElemnent.generateTableHTML();
+            aElementTable[0].append(oElemnent.generateTableHTML());
     
             document.getElementById("element-name").value = "";
             document.getElementById("element-url").value = "";
@@ -90,7 +95,7 @@ function addRemoveListener() {
         
             aElementTable[0].innerHTML = "";
         
-            aElements.forEach(oElement => aElementTable[0].innerHTML += oElement.generateTableHTML());
+            aElements.forEach(oElement => aElementTable[0].append(oElement.generateTableHTML()));
         
             window.localStorage.setItem("elements", JSON.stringify(aElements));
 
