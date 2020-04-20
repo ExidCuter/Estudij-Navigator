@@ -1,6 +1,6 @@
 # Estudij Navigator
 
-A simple firefox extension for easier navigation of subjects on Estudij.
+A simple firefox extension for easier navigation of subjects on Estudij. [Add to firefox](https://github.com/ExidCuter/Estudij-Navigator/releases/download/0.1.1/estudij_navigator-0.1-an+fx.xpi)
 
 ## Usage
 
